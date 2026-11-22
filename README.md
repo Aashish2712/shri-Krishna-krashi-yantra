@@ -21,24 +21,38 @@ npm run lint       # oxlint
 
 ## Status
 
-Milestone 1: brand foundation and homepage completed. Milestone 2 has started: the product catalogue and reusable product-detail page now use the approved local product data. The About, Manufacturing, Dealers, Request Quote and Contact pages remain placeholders. The quote and dealer pages do not submit anything yet, and there is no backend.
+Milestones 1 and 2 are complete (homepage, brand foundation, product catalogue and product detail pages). Milestone 3 adds the About, Manufacturing & Quality, Become a Dealer, Request a Quote and Contact pages.
+
+**The forms are frontend prototypes.** They validate entries and show clear messages, but nothing is sent, saved or stored: no API call is made and no browser storage is used for form data. Each form says so on the page. There is no backend yet.
 
 ## Structure
 
 - `src/styles/`: `tokens.css` (colours, type, spacing, breakpoints), `global.css` (reset, base type, focus), `layout.css` (container and section helpers)
 - `src/components/layout/`: Header and Footer, each with its own CSS
 - `src/components/home/`: one component and CSS file per homepage section
-- `src/components/ui/`: Button, SectionHeading, ProductCard, PagePlaceholder
+- `src/components/ui/`: Button, SectionHeading, ProductCard, PageHero, CtaBand, PagePlaceholder
+- `src/components/forms/`: shared form pieces (FormField, FormCard, FormSummary, PrototypeNotice, SelectedProductCard) and the three forms (QuoteForm, DealerForm, ContactForm)
+- `src/forms/`: per-form values, validation rules and the payload mapper for a future API
+- `src/utils/`: pure helpers (`validation.ts`, `fieldId.ts`)
 - `src/layouts/`: shared public-site layout (skip link, header, page outlet, footer)
 - `src/pages/`: one component per route, plus `NotFoundPage`
 - `src/data/`: typed content (company details, navigation, products, homepage copy)
 - `src/types/`: TypeScript types for the data modules
 - `src/services/`: data access (`productService.ts` is the single place to replace with an API call later)
-- `src/hooks/`: `useDocumentMeta` (title and description), `useMobileNav`
+- `src/hooks/`: `useDocumentMeta` (title and description), `useMobileNav`, `useEnquiryForm` (form state and validation)
 - `src/routes.tsx`: route configuration
 - `public/logo/sk-logo.jpeg`: the client's original logo, unmodified. Do not edit, recolour, redraw or replace it.
 - `public/images/`: resized and compressed copies of genuine catalogue photographs (see `docs/REQUIRED_ASSETS.md`)
 - `src/i18n`: reserved, currently empty
+
+## Forms and future backend integration
+
+- Form state and validation live in `src/hooks/useEnquiryForm.ts` and `src/forms/*.ts`; the components only render.
+- Errors appear on submit and update as the user types. They are not shown on blur, because the layout shift can swallow the click on the submit button.
+- Each `src/forms/*Form.ts` exports a `to*Payload` function that shapes the data the way a Django REST Framework endpoint could accept it (snake_case, optional email as `null`). Nothing calls it yet.
+- To connect a backend later: call the API from `handleSubmit` in `useEnquiryForm` after validation passes, add real sending, success and failure statuses, and remove the prototype notices in `src/data/formContent.ts`.
+- The quote form reads its product list from `src/services/productService.ts`. Product pages link to `/request-quote?product=<slug>`; unknown slugs are ignored.
+- The router stores scroll positions in `sessionStorage` (`ScrollRestoration`). No form data is stored.
 
 ## Design notes
 
@@ -51,5 +65,5 @@ Milestone 1: brand foundation and homepage completed. Milestone 2 has started: t
 
 - Page titles and meta descriptions are set in the browser by `useDocumentMeta`. Search engines that run JavaScript will see them, but social previews and some crawlers read only the initial HTML.
 - This is a client-rendered single-page app. Before launch, decide on pre-rendering or server rendering for the public pages.
-- Still to do before launch: per-page titles and descriptions for the remaining pages, Open Graph / social preview tags, canonical URLs, `robots.txt` and a sitemap, and structured data for the business once contact details are approved.
+- Every public page now sets its own title and description in the browser. Still to do before launch: Open Graph / social preview tags, canonical URLs, `robots.txt` and a sitemap, and structured data for the business once contact details are approved.
 - Hindi pages will need `lang="hi"` and language-specific URLs or alternates.

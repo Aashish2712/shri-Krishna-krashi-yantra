@@ -13,9 +13,19 @@ interface ButtonProps {
   /** External URL. Renders a plain anchor. */
   href?: string
   onClick?: () => void
+  /** Native button type. Use 'submit' inside forms. */
+  type?: 'button' | 'submit'
 }
 
-function Button({ children, variant = 'primary', size = 'md', to, href, onClick }: ButtonProps) {
+function Button({
+  children,
+  variant = 'primary',
+  size = 'md',
+  to,
+  href,
+  onClick,
+  type = 'button',
+}: ButtonProps) {
   const className = `btn btn--${variant} btn--${size}`
 
   if (to) {
@@ -40,7 +50,7 @@ function Button({ children, variant = 'primary', size = 'md', to, href, onClick 
   }
 
   return (
-    <button type="button" className={className} onClick={onClick}>
+    <button type={type} className={className} onClick={onClick}>
       {children}
     </button>
   )

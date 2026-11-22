@@ -48,3 +48,14 @@ These were received in the project conversation. They have **not** yet been adde
 
 ### Hindi content
 - Hindi translations of navigation, page content, product descriptions and specifications, approved by the client
+
+## Milestone 3 content gaps (About, Manufacturing, Dealers, Quote, Contact)
+
+Pages were written only from the supplied profile and catalogue. These items were deliberately left out or kept neutral and need client input:
+
+- **About:** establishment year, history beyond the welding workshop origin, and any achievements. None were supplied, so none are stated.
+- **Manufacturing & Quality:** no process steps, machinery, inspection or quality procedures, materials, certifications or capacity were supplied. The page states only the company's four-step approach and construction facts already in the product data, and invites enquiries. The catalogue also names a chassis pipe brand; it is not published until the client approves naming it.
+- **Manufacturing photographs:** only product photographs are available. Photographs of the workshop, fabrication, welding, painting or finishing would let that page show the process.
+- **Dealers:** the catalogue's dealer page also lists "marketing support" and "product information & support". These are not repeated, because the page must not imply guaranteed support. Confirm what, if anything, the company is happy to promise dealers. Also confirm who should receive dealer enquiries.
+- **Contact:** street address and PIN code, business hours, and a map location. None are shown. Confirm whether the Gmail address should remain public.
+- **Forms:** where submissions will go (email, WhatsApp, admin only), and who responds. Needed for the backend phase.

@@ -1,0 +1,17 @@
+.prototype-notice {
+  padding: var(--space-4);
+  border: 1px solid var(--color-charcoal);
+  border-left-width: 6px;
+  border-radius: var(--radius-sm);
+  background: #fff8e6;
+  color: var(--color-charcoal);
+  font-size: var(--text-sm);
+}
+
+.prototype-notice__title {
+  margin-bottom: var(--space-1);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: var(--text-xs);
+}

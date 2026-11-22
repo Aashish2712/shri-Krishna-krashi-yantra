@@ -1,0 +1,16 @@
+.form-card {
+  padding: clamp(1.25rem, 1rem + 1.5vw, 2.25rem);
+  border: 1px solid var(--color-line);
+  border-top: 4px solid var(--color-green);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+}
+
+.form-card__title {
+  font-size: var(--text-xl);
+}
+
+.form-card__intro {
+  margin: var(--space-2) 0 var(--space-5);
+  color: var(--color-grey);
+}

@@ -1,0 +1,31 @@
+/* Shared layout for the three enquiry forms. */
+.enquiry-form {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.enquiry-form__grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.enquiry-form__required {
+  font-size: var(--text-sm);
+  color: var(--color-grey);
+}
+
+.enquiry-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+@media (min-width: 48em) {
+  .enquiry-form__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .enquiry-form .form-field--full {
+    grid-column: 1 / -1;
+  }
+}

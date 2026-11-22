@@ -69,7 +69,7 @@ function ProductDetailPage() {
                 Pricing is quotation-based and depends on the model and your requirements.
               </p>
               <div className="product-detail__actions">
-                <Button to="/request-quote" variant="secondary">Request a Quote</Button>
+                <Button to={`/request-quote?product=${product.slug}`} variant="secondary">Request a Quote</Button>
                 <Button to="/contact" variant="outline">Contact Us</Button>
               </div>
             </div>
