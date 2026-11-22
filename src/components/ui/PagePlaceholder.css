@@ -1,0 +1,22 @@
+/* Placeholder styling only, to verify routing works. Not the final design. */
+.page-placeholder {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.page-placeholder__title {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-placeholder__route,
+.page-placeholder__detail {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+}
+
+.page-placeholder__note {
+  margin-top: 1rem;
+  color: #6b7280;
+}

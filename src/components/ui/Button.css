@@ -1,0 +1,76 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 2.875rem;
+  padding: 0.7rem 1.4rem;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn--sm {
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.btn--primary {
+  background: var(--color-green-strong);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background: var(--color-green-deep);
+  color: var(--color-white);
+}
+
+.btn--secondary {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+.btn--secondary:hover {
+  background: var(--color-red-deep);
+  color: var(--color-white);
+}
+
+.btn--outline {
+  background: transparent;
+  border-color: var(--color-charcoal);
+  color: var(--color-charcoal);
+}
+
+.btn--outline:hover {
+  background: var(--color-charcoal);
+  color: var(--color-white);
+}
+
+/* For use on dark or green backgrounds. */
+.btn--light {
+  background: var(--color-white);
+  color: var(--color-charcoal);
+}
+
+.btn--light:hover {
+  background: var(--color-offwhite);
+  color: var(--color-charcoal);
+}
+
+.btn--outline-light {
+  background: transparent;
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.btn--outline-light:hover {
+  background: var(--color-white);
+  color: var(--color-charcoal);
+}

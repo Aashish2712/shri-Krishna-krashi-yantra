@@ -1,0 +1,30 @@
+/* Shared layout primitives. */
+
+.container {
+  width: min(100% - 2 * var(--gutter), var(--container-max));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-space);
+}
+
+.section--tint {
+  background: var(--color-green-tint);
+}
+
+.section--offwhite {
+  background: var(--color-offwhite);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

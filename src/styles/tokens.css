@@ -1,0 +1,62 @@
+/* Design tokens. Brand colours are sampled from the supplied logo image
+   (green ~#009440, red ~#D82018, charcoal ~#1F1A17). These are measured
+   values, not an official brand specification.
+
+   Breakpoints (CSS variables cannot be used in media queries, so use these
+   literal values everywhere):
+     tablet  : @media (min-width: 48em)   (768px)
+     desktop : @media (min-width: 64em)   (1024px)
+     wide    : @media (min-width: 80em)   (1280px) */
+
+:root {
+  /* Colour: brand */
+  --color-green: #009440;          /* logo green: large shapes, accents */
+  --color-green-strong: #00702f;   /* text, buttons, links (AA contrast on white) */
+  --color-green-deep: #00522a;     /* hover / pressed */
+  --color-green-tint: #eef5ef;     /* light section background */
+  --color-red: #d82018;            /* logo red: selective accent only */
+  --color-red-deep: #b01912;
+
+  /* Colour: neutrals */
+  --color-charcoal: #1f1a17;       /* headings, industrial surfaces */
+  --color-ink: #2e2925;            /* body text */
+  --color-grey: #5f5a55;           /* supporting text */
+  --color-line: #d9d4cd;           /* borders */
+  --color-offwhite: #f7f5f0;       /* warm background */
+  --color-white: #ffffff;
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', 'Noto Sans Devanagari', 'Nirmala UI', Mangal, sans-serif;
+  --font-heading: var(--font-sans);
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.1875rem;
+  --text-xl: clamp(1.375rem, 1.1rem + 1vw, 1.75rem);
+  --text-2xl: clamp(1.75rem, 1.3rem + 1.8vw, 2.5rem);
+  --text-3xl: clamp(2.125rem, 1.4rem + 3vw, 3.5rem);
+  --leading-body: 1.65;
+  --leading-heading: 1.2;
+  --leading-devanagari: 1.85;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --section-space: clamp(3.5rem, 2.5rem + 5vw, 6.5rem);
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2rem);
+
+  /* Shape */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --container-max: 75rem;
+  --header-height: 4.75rem;
+  --focus-ring: 3px solid var(--color-green-strong);
+}

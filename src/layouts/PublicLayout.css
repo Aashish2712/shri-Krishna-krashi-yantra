@@ -1,0 +1,30 @@
+.public-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.public-layout__main {
+  flex: 1;
+}
+
+.public-layout__main:focus {
+  outline: none;
+}
+
+.public-layout__skip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-charcoal);
+  color: var(--color-white);
+  font-weight: 700;
+  transform: translateY(-120%);
+}
+
+.public-layout__skip:focus {
+  transform: none;
+  color: var(--color-white);
+}

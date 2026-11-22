@@ -1,0 +1,21 @@
+.quote-cta__inner {
+  max-width: 44rem;
+  text-align: center;
+}
+
+.quote-cta__title {
+  font-size: var(--text-2xl);
+}
+
+.quote-cta__text {
+  margin-top: var(--space-4);
+  color: var(--color-grey);
+}
+
+.quote-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
