@@ -1,4 +1,3 @@
-
 name: Deploy SKKY Milestone 3 Preview
 
 on:
@@ -8,6 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: read
   contents: read
   pages: write
   id-token: write
